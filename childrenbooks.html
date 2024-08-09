@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <script src="onlinebookstore.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .card {
+        text-align: center;
+    }
+
+    .card img {
+        display: block;
+        margin: 0 auto;
+    }
+        .add-to-cart-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #45a049;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <h1>Book Store</h1>
+
+    <div class="card">
+        <h3>The Wonderful Things you will be</h3>
+        <p class="price">Rs.526</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\thewonderfulthingsyouwillbe.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('The Wonderful Things you will be', 'Emily Windielf Martin', 526)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Where the wild things are</h3>
+        <p class="price">Rs.136</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\wherethewildthingsare.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Where the wild things are', 'Maurice Sendak', 136)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Guess How much I Love you</h3>
+        <p class="price">Rs.632</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\guesshowmuchiloveyou.jpeg"alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Guess How much I Love you', 'Sam McBratney', 632)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Grandmas Bag of Stories</h3>
+        <p class="price">Rs.366</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\grandmasbagofstories.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Grandmas Bag of Stories', 'Sudha Murthy', 366)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Goodnight Moon</h3>
+        <p class="price">Rs.136</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\goodnightmoon.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Goodnight Moon', 'Margaret Wise Brown', 136)" class="btn">Add to Cart</button>
+    </div>
+
+ 
+    <div class="card">
+        <h3>Diary of a Wimpy Kid</h3>
+        <p class="price">Rs.342</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\diaryofawimpykid.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Diary of a Wimpy Kid', 'Jeff Kinney', 342)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>200 + activities</h3>
+        <p class="price">Rs.342</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\200plusactivities.jpeg"alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('200 + activities', 'Maple Kids', 342)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>101 Pencil Control</h3>
+        <p class="price">Rs.130</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\childrenbooks\101pencilcontrol.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('101 Pencil Control', 'Activity Book', 130)" class="btn">Add to Cart</button>
+    </div>
+
+
+
+    
+    
+    <!-- Add more cards as needed -->
+
+    <script>
+        function addToCart(bookTitle, author, price) {
+            var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+            var book = { title: bookTitle, author: author, price: price }; // Corrected the parameter name
+            cartItems.push(book);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+    
+            // Add your logic to handle adding items to the cart (e.g., using JavaScript/local storage)
+            alert('Added ' + bookTitle + ' to the cart. Price: Rs.' + price.toFixed(2));
+        }
+    </script>
+    
+  
+  
+</body>
+</html>

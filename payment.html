@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Payment Page</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    height: 100vh;
+}
+
+.left-grid {
+    background-color: #5D5C61;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.left-grid h2 {
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.left-grid ul {
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+
+.left-grid li {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #557A95;
+    margin-bottom: 5px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.right-grid {
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+
+</style>
+<body>
+
+<div class="container">
+    <div class="left-grid">
+        <h2>Select Payment Option</h2>
+        <ul>
+            <li onclick="selectPaymentOption('Cash')">Cash</li>
+            <li onclick="selectPaymentOption('Card')">Card</li>
+            <li onclick="selectPaymentOption('UPI')">UPI</li>
+        </ul>
+    </div>
+
+    <div class="right-grid" id="rightGrid">
+        <h1>Welcome to the Payment Page</h1>
+        <p>Please select a payment option from the left side.</p>
+    <!-- Add this inside the right-grid div -->
+</div>
+</div>
+<div class="container">
+  <div class="modal" id="myModal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h1>UPI Payment</h1>
+          <p>Please use your UPI app to scan the QR code and complete the payment.</p>
+          <!-- Add your UPI payment details or QR code here -->
+          <img src="./images/qr.png" style="height: 250px; width: 250px; align-items: center;" alt="UPI QR Code">
+      </div>
+  </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the total amount from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const totalAmount = urlParams.get('total');
+
+    // Display the total amount on the page
+    const totalElement = document.getElementById('total-amount');
+    totalElement.textContent = 'Total Amount: Rs.' + totalAmount;
+
+    // Rest of your existing script...
+});
+function selectPaymentOption(option) {
+  const rightGrid = document.getElementById('rightGrid');
+      // Get the total amount from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+    const totalAmount = urlParams.get('total');
+    const totalAmountHtml = `<div id="total-amount">Total Amount: Rs.${totalAmount}</div>`;
+
+
+  switch (option) {
+      case 'Cash':
+          rightGrid.innerHTML = `
+              <h1>Cash Payment</h1>
+              <p>Please proceed to the cashier and make your payment in cash.</p>
+         <div id="total-amount"></div>
+                ${totalAmountHtml}
+
+              `;
+          break;
+      
+      case 'Card':
+          rightGrid.innerHTML = `
+          <h1>Card Payment</h1>
+                <form id="cardForm">
+                  <br><br>
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+                    <br><br>
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                    <br><br>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                    <br><br>
+                    <button type="button" onclick="processCardPayment()">Submit Payment</button>
+                </form>
+                ${totalAmountHtml}
+
+          `;
+         
+          break;
+      
+      case 'UPI':
+          rightGrid.innerHTML = `
+          <h1>UPI Payment</h1>
+                <p>Please use your UPI app to scan the QR code and complete the payment.</p>
+                <!-- Add your UPI payment details or QR code here -->
+                <button onclick="openModal()">Proceed with UPI Payment</button>
+                ${totalAmountHtml}
+
+                `;
+          break;
+      
+      default:
+          rightGrid.innerHTML = `
+              <h1>Invalid Payment Option</h1>
+              <p>Please select a valid payment option from the left side.</p>
+          `;
+  }
+}
+function processCardPayment() {
+    // Add your logic to process card payment here
+    alert('Card payment processed successfully!');
+}
+function openModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    const modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+}
+
+</script>
+</body>
+</html>

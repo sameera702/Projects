@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <script src="onlinebookstore.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+        .card {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .card {
+        text-align: center;
+    }
+
+    .card img {
+        display: block;
+        margin: 0 auto;
+    }
+        .add-to-cart-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #45a049;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <h1>Book Store</h1>
+
+    <div class="card">
+        <h3>wings of Fire</h3>
+        <p class="price">Rs. 130</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\Wings_of_Fire_by_A_P_J_Abdul_Kalam_Book_Cover.jpg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Wings of Fire', 'A.P.J Abdul Kalam', 130)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>The Diary of Young Girl</h3>
+        <p class="price">Rs.119</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\annefrank.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('The Diary of a Young Girl', 'Anne Frank', 119)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Why I Killed Gandhi</h3>
+        <p class="price">Rs.159</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\whyikilledgandi.jpeg"alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Why I Killed Gandhi', 'Nathuram Godse', 159)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Friends, Lovers and the Big Terrible Thing</h3>
+        <p class="price">Rs.215</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\friendslovers.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Friends, Lovers, and the Big Terrible Thing', 'Matthew Perry', 215)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Vera</h3>
+        <p class="price">Rs.4491</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\vera.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Vera', 'Mrs.Vladimir Nabokov', 4491)" class="btn">Add to Cart</button>
+    </div>
+
+ 
+    <div class="card">
+        <h3>Jail Diary of Bhagat Singh</h3>
+        <p class="price">Rs.149</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\bhagatsingh.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Jail Diary of Bhagat Singh', 'bhagat singh', 149)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Unbroken: A World war II Story of Survival, Resilience, and Redemption </h3>
+        <p class="price">Rs.2238</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\unbroken.jpeg"alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Unbroken: A World War II Story of Survival, Resilience, and Redemption', 'Laura Hillenbrand', 2238)" class="btn">Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Prairie Fires</h3>
+        <p class="price">Rs.3831</p>
+        <img src="D:\XAMPP\htdocs\WAD project\images\biographies\prariefries.jpeg" alt="Book Cover" width="200" height="200" ><br>
+        <button onclick="addToCart('Prairie Fires', 'Caroline Fraser', 3831)" class="btn">Add to Cart</button>
+    </div>
+
+
+
+    
+    
+    <!-- Add more cards as needed -->
+
+    <script>
+        function addToCart(bookTitle, author, price) {
+            var cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+            var book = { title: bookTitle, author: author, price: price }; // Corrected the parameter name
+            cartItems.push(book);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+    
+            // Add your logic to handle adding items to the cart (e.g., using JavaScript/local storage)
+            alert('Added ' + bookTitle + ' to the cart. Price: Rs.' + price.toFixed(2));
+        }
+    </script>
+    
+  
+  
+</body>
+</html>

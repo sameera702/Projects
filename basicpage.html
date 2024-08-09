@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <title>Online Bookstore</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./images/finalbg.jpg'); /* Add your background image URL */
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            font-size :500px;
+            align-items: center;
+            margin-top: 150px;
+            margin-bottom: 150px;
+            justify-content: center;
+            font-family: 'Audiowide', sans-serif; /* Use a stylish font like 'Poppins' - You can include it from Google Fonts */
+            color:cornsilk /* Text color */
+        }
+
+        #exploreButton {
+            font-family: 'Sofia', sans-serif; /* Use a stylish font like 'Poppins' - You can include it from Google Fonts */
+
+            padding: 20px 40px;
+            font-size: 50px;
+            --white-transparent: rgba(255, 255, 255, 0.8); /* Transparent white shade */
+            --black: #000; /* Black color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #exploreButton:hover {
+            background-color:darkgray; /* Hover color */
+        }
+
+        #onlineBookstore {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div style="font-size:xx-large;"  id="onlineBookstore">Online Bookstore</div>
+    <button id="exploreButton" onclick="navigateToBookstore()">Explore</button>
+</body>
+<script>
+function navigateToBookstore() {
+    // Replace 'your-bookstore-page.html' with the actual file or URL of your bookstore page
+    window.location.href = 'file:///D:/XAMPP/htdocs/WAD%20project/onlinebookstore.html';
+}
+</script>
+</html>

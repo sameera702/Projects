@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="onlinebookstore.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <a href="#" class="logo"> <i class="fas fa-book"></i> Prose Paradise </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="./cart.html" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="file:///D:/XAMPP/htdocs/WAD%20project/basicpage.html">home</a>
+            <a href="#featured">featured</a>
+            <a href="category.html">category</a>
+            <a href="./review.html">reviews</a>
+            <a href="./payment.html">Payments</a>  
+            <a href="http://localhost/WAD%20project/prev/login.php">Login</a>   
+            <a href="http://localhost/WAD%20project/prev/register.php">Register</a>          
+       
+        </nav>
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#arrivals" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#feedback" class="fas fa-feedback"></a>
+</nav>
+
+<!-- login form  -->
+
+<div class="login-form-container">
+
+    <div id="close-login-btn" class="fas fa-times"></div>
+
+    <form action="">
+        <h3>sign in</h3>
+        <span>username</span>
+        <input type="email" name="" class="box" placeholder="enter your email" id="">
+        <span>password</span>
+        <input type="password" name="" class="box" placeholder="enter your password" id="">
+        <div class="checkbox">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me"> remember me</label>
+        </div>
+        <input type="submit" value="sign in" class="btn">
+        <p>forget password ? <a href="#">click here</a></p>
+        <p>don't have an account ? <a href="#">create one</a></p>
+    </form>
+
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="row">
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide"><img src="D:\XAMPP\htdocs\WAD project\images\1.webp" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="D:\XAMPP\htdocs\WAD project\images\2.webp" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="D:\XAMPP\htdocs\WAD project\images\3.webp" alt=""></a>
+                <a href="#" class="swiper-slide"><img src="D:\XAMPP\htdocs\WAD project\images\4.webp" alt=""></a>
+                <a href="#" class="swiper-slide"><img src= "D:\XAMPP\htdocs\WAD project\images\5.webp"alt=""></a>
+                <a href="#" class="swiper-slide"><img src="D:\XAMPP\htdocs\WAD project\images\6.webp" alt=""></a>
+            </div>
+            <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/stand.png" class="stand" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- home section ense  -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>free shipping</h3>
+            <p>order over $100</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>secure payment</h3>
+            <p>100 secure payment</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>easy returns</h3>
+            <p>10 days returns</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>24/7 support</h3>
+            <p>call us anytime</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- featured section starts  -->
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>featured books</span> </h1>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="./product.html"> <img src="D:\XAMPP\htdocs\WAD project\images\Do the New You (2333).jpg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>Do the New You</h3>
+                    <div class="price">Rs. 2333 <span>Rs. 3000</span></div>
+                    <button onclick="addToCart('Do the New You', 'Pastor Steven Furtik', 2333)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="./product.html"> <img src="D:\XAMPP\htdocs\WAD project\images\The girl in room 105(220).jpg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>The girl in room 105</h3>
+                    <div class="price">Rs. 220<span>Rs. 240</span></div>
+                    <button onclick="addToCart('The girl in room 105', 'Chethan Bhagat', 220)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="product.html"><img src="D:\XAMPP\htdocs\WAD project\images\How the Earth got its Beauty(151).jpg" alt=""> </a>
+                </div>
+                <div class="content">
+                    <h3>How the Earth got its Beauty</h3>
+                    <div class="price">Rs. 151 <span>Rs.170</span></div>
+                    <button onclick="addToCart('How the Earth got its Beauty', 'Sudha Murthy', 151)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\The man who knew too much(199).webp" alt="">
+                </div>
+                <div class="content">
+                    <h3>The man who knew too much</h3>
+                    <div class="price">Rs. 199<span>Rs. 250</span></div>
+                    <button onclick="addToCart('The man who knew too much', 'G.K Chestertron', 199)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\The girl next door(301).webp" alt="">
+                </div>
+                <div class="content">
+                    <h3>The girl next door</h3>
+                    <div class="price">Rs. 301 <span>Rs. 350</span></div>
+                    <button onclick="addToCart('The girl next door', 'Phoebe Morgon', 301)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\The boy in the stripped pajamas(226).jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>The boy in the stripped pajamas</h3>
+                    <div class="price">Rs.226 <span>Rs.270</span></div>
+                    <button onclick="addToCart('The Boy in the Stripped Pajamas', 'John Boyne', 226)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\History of South India(375).jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>History of South India</h3>
+                    <div class="price">Rs. 375 <span>Rs.420</span></div>
+                    <button onclick="addToCart('History of South India', 'Pradeep Chakravarthy', 375)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\Black rain falling(417).jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Black rain falling</h3>
+                    <div class="price">Rs.417 <span>Rs.450</span></div>
+                    <button onclick="addToCart('Black Rain Falling ', 'Jacob Ross', 417)" class="btn">Add to Cart</button>
+
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src= "D:\XAMPP\htdocs\WAD project\images\No where safe to run haven(987).webp"alt="">
+                </div>
+                <div class="content">
+                    <h3>No where safe to run haven</h3>
+                    <div class="price">Rs.987 <span>Rs.1000</span></div>
+                    <button onclick="addToCart('No Where safe to run haven', 'Lawrence Hebb', 987)" class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="D:\XAMPP\htdocs\WAD project\images\Good night & Sleep Tight (336).jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Good night & Sleep Tight</h3>
+                    <div class="price">Rs.336 <span>Rs.350</span></div>
+                    <button onclick="addToCart('Good night & Sleep Tight', 'author', 336)" class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+</section>
+
+<!-- featured section ends -->
+
+
+
+
+<!-- About us -->
+
+<section class="deal">
+
+    <div class="content">
+        <h3>About us</h3>
+        <h1>Prose Paradise</h1>
+        <p>Books have the power to enlighten our world by offering insights into diverse cultures, histories, and perspectives. They spark creativity, provoke thoughts, and ignite passions. Through the pages of a book, readers can explore new horizons, empathize with characters, and broaden their understanding of the world around them.
+            Prose Paradise is not just a bookstore; it is a gateway to a universe of stories waiting to be explored. </p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+
+    <div class="image">
+        <img src="D:\XAMPP\htdocs\WAD project\images\proseparadise.avif" alt="">
+    </div>
+
+</section>
+
+<!-- deal section ends -->
+
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>our locations</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> india </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> USA </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Australia </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> London </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Israel </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Germany</a>
+
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> Category </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a href="./feedback.html"> <i class="fas fa-arrow-right"></i> feedback </a>
+        </div>
+
+       
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> 9676496874 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> 21951a6247@iare.ac.in </a>
+        </div>
+
+    </div>
+
+    <div class="share">
+        <a href="https://www.instagram.com/sameera__0410/" class="fab fa-instagram"></a>
+        <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFLIdbHwQW5NgAAAY31rt_YwzGa8zXNP2oanwbg6Fj_yf6JB4z9XcH955EQ4gTHUWHMb3qKqm3fWx9209R6GFz83l4k62Mksp5fFVZNQb8wol_S4hnjZ94lGZRd9JHaXo0hopQ=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fsameera-bethapudi-5b939a22b%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app" class="fab fa-linkedin"></a>
+    </div>
+
+    <div class="credit"> created by <span>Sameera Bethapudi </span>copyright ©2023-2024 (IARE-Cyber Security) ! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="onlinebookstore.js"></script>
+
+</body>
+</html>

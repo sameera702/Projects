@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:cadetblue;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+#reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.review-card {
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.review-card p {
+    margin-bottom: 0;
+}
+
+.review-card .rating {
+    color:darkslateblue;
+    font-size: 1.2rem;
+}
+
+#review-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#review-form h2 {
+    text-align: center;
+}
+
+#add-review-form {
+    display: grid;
+    gap: 10px;
+}
+
+#add-review-form label {
+    font-weight: bold;
+}
+
+#add-review-form textarea {
+    height: 100px;
+}
+
+#add-review-form button {
+    background-color:cadetblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-end-end-radius: 5px;
+}
+
+</style>
+<body>
+
+<header>
+    <h1>Customer Reviews</h1>
+</header>
+
+<section id="reviews-container">
+    <!-- Reviews will be dynamically added here using JavaScript -->
+</section>
+
+<section id="review-form">
+    <h2>Write a Review</h2>
+    <form id="add-review-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+
+        <button type="submit">Submit Review</button>
+    </form>
+</section>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+    const reviewsData = [
+        { name: 'John Doe', rating: 4, comment: 'Great service! Will buy again.' },
+        { name: 'Jane Smith', rating: 5, comment: 'Excellent books and quick delivery.' },
+        { name: 'Bob Johnson', rating: 3, comment: 'Average experience. Could be better.' },
+    ];
+
+    const reviewsContainer = document.getElementById('reviews-container');
+    const reviewForm = document.getElementById('add-review-form');
+
+    reviewsData.forEach(review => {
+        const reviewCard = createReviewCard(review);
+        reviewsContainer.appendChild(reviewCard);
+    });
+
+    reviewForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const rating = document.getElementById('rating').value;
+        const comment = document.getElementById('comment').value;
+
+        if (name && rating && comment) {
+            const newReview = { name, rating: parseInt(rating), comment };
+            const newReviewCard = createReviewCard(newReview);
+            reviewsContainer.appendChild(newReviewCard);
+
+            // Clear the form
+            reviewForm.reset();
+        } else {
+            alert('Please fill in all fields.');
+        }
+    });
+});
+// ... existing JavaScript code ...
+
+reviewForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const rating = document.getElementById('rating').value;
+    const comment = document.getElementById('comment').value;
+
+    if (name && rating && comment) {
+        // ... existing code ...
+
+        // Send data to the server (PHP)
+        fetch('reviews.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `name=${encodeURIComponent(name)}&rating=${encodeURIComponent(rating)}&comment=${encodeURIComponent(comment)}`,
+        })
+        .then(response => response.json())
+        .then(newReview => {
+            // Add the new review to the DOM
+            const newReviewCard = createReviewCard(newReview);
+            reviewsContainer.appendChild(newReviewCard);
+
+            // Clear the form
+            reviewForm.reset();
+        })
+        .catch(error => console.error('Error submitting review:', error));
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+// ... rest of your JavaScript code ...
+
+function createReviewCard(review) {
+    const card = document.createElement('div');
+    card.classList.add('review-card');
+
+    const nameElement = document.createElement('h2');
+    nameElement.textContent = review.name;
+
+    const ratingElement = document.createElement('div');
+    ratingElement.classList.add('rating');
+    ratingElement.textContent = 'Rating: ' + review.rating + '/5';
+
+    const commentElement = document.createElement('p');
+    commentElement.textContent = review.comment;
+
+    card.appendChild(nameElement);
+    card.appendChild(ratingElement);
+    card.appendChild(commentElement);
+
+    return card;
+}
+</script>
+</body>
+</html>
